@@ -4,7 +4,7 @@ import '../../../constants.dart';
 
 class FeaturedPlants extends StatelessWidget {
   const FeaturedPlants({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -29,12 +29,13 @@ class FeaturedPlants extends StatelessWidget {
 
 class FeaturePlantCard extends StatelessWidget {
   const FeaturePlantCard({
-    Key key,
-    this.image,
-    this.press,
+    Key? key,
+    required this.press, // Allow 'press' to be null
+    required this.image,
   }) : super(key: key);
+
   final String image;
-  final Function press;
+  final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {

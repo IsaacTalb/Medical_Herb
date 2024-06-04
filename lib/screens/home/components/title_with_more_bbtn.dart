@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-
 import '../../../constants.dart';
 
 class TitleWithMoreBtn extends StatelessWidget {
   const TitleWithMoreBtn({
-    Key key,
-    this.title,
-    this.press,
+    Key? key,
+    required this.title,
+    required this.press,
   }) : super(key: key);
+
   final String title;
-  final Function press;
+  final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +19,13 @@ class TitleWithMoreBtn extends StatelessWidget {
         children: <Widget>[
           TitleWithCustomUnderline(text: title),
           Spacer(),
-          FlatButton(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
+          TextButton(
+            style: TextButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              backgroundColor: kPrimaryColor,
             ),
-            color: kPrimaryColor,
             onPressed: press,
             child: Text(
               "More",
@@ -38,8 +40,8 @@ class TitleWithMoreBtn extends StatelessWidget {
 
 class TitleWithCustomUnderline extends StatelessWidget {
   const TitleWithCustomUnderline({
-    Key key,
-    this.text,
+    Key? key,
+    required this.text,
   }) : super(key: key);
 
   final String text;
@@ -66,7 +68,7 @@ class TitleWithCustomUnderline extends StatelessWidget {
               height: 7,
               color: kPrimaryColor.withOpacity(0.2),
             ),
-          )
+          ),
         ],
       ),
     );

@@ -5,8 +5,8 @@ import '../../../constants.dart';
 
 class HeaderWithSearchBox extends StatelessWidget {
   const HeaderWithSearchBox({
-    Key key,
-    @required this.size,
+    Key? key,
+    required this.size, // Ensure size is required and non-nullable
   }) : super(key: key);
 
   final Size size;
@@ -36,9 +36,13 @@ class HeaderWithSearchBox extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Text(
-                  'Hi Uishopy!',
-                  style: Theme.of(context).textTheme.headline5.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.bold),
+                  'Hello from CWB',
+                  style: TextStyle(
+                    // Use an alternative text style or define headline5 in your theme
+                    fontSize: 24, // Adjust font size as needed
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Spacer(),
                 Image.asset("assets/images/logo.png")
@@ -77,8 +81,8 @@ class HeaderWithSearchBox extends StatelessWidget {
                         ),
                         enabledBorder: InputBorder.none,
                         focusedBorder: InputBorder.none,
-                        // surffix isn't working properly  with SVG
-                        // thats why we use row
+                        // suffix isn't working properly with SVG
+                        // that's why we use row
                         // suffixIcon: SvgPicture.asset("assets/icons/search.svg"),
                       ),
                     ),

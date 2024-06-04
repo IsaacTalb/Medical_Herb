@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:plant_app/screens/details/details_screen.dart';
+import 'package:medical_herb/screens/details/details_screen.dart';
 
 import '../../../constants.dart';
 
 class RecomendsPlants extends StatelessWidget {
   const RecomendsPlants({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -57,17 +57,17 @@ class RecomendsPlants extends StatelessWidget {
 
 class RecomendPlantCard extends StatelessWidget {
   const RecomendPlantCard({
-    Key key,
-    this.image,
-    this.title,
-    this.country,
-    this.price,
-    this.press,
+    Key? key,
+    required this.image,
+    required this.title,
+    required this.country,
+    required this.price,
+    required this.press,
   }) : super(key: key);
 
   final String image, title, country;
   final int price;
-  final Function press;
+  final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
@@ -106,10 +106,15 @@ class RecomendPlantCard extends StatelessWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                            text: "$title\n".toUpperCase(),
-                            style: Theme.of(context).textTheme.button),
+                          text: "$title\n".toUpperCase(),
+                          style: TextStyle(
+                            fontSize: 16, // Adjust font size as needed
+                            fontWeight: FontWeight.bold,
+                            color: kTextColor, // Use your desired color
+                          ),
+                        ),
                         TextSpan(
-                          text: "$country".toUpperCase(),
+                          text: country.toUpperCase(),
                           style: TextStyle(
                             color: kPrimaryColor.withOpacity(0.5),
                           ),
@@ -120,15 +125,16 @@ class RecomendPlantCard extends StatelessWidget {
                   Spacer(),
                   Text(
                     '\$$price',
-                    style: Theme.of(context)
-                        .textTheme
-                        .button
-                        .copyWith(color: kPrimaryColor),
+                    style: TextStyle(
+                      fontSize: 16, // Adjust font size as needed
+                      fontWeight: FontWeight.bold,
+                      color: kPrimaryColor, // Use your desired color
+                    ),
                   )
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

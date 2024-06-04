@@ -1,0 +1,1 @@
+ /Users/isaactalb/development/Github\ Repo\ Project/medical-herb/.dart_tool/flutter_build/ceed0f02dee0cc3daa66b806f2031131/native_assets.yaml: 

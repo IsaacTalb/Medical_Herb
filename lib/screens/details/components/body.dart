@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:plant_app/constants.dart';
+import 'package:medical_herb/constants.dart';
 
 import 'image_and_icons.dart';
 import 'title_and_price.dart';
@@ -19,13 +19,16 @@ class Body extends StatelessWidget {
               SizedBox(
                 width: size.width / 2,
                 height: 84,
-                child: FlatButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(20),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor:
+                        kPrimaryColor, // Changed from 'primary' to 'backgroundColor'
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(20),
+                      ),
                     ),
                   ),
-                  color: kPrimaryColor,
                   onPressed: () {},
                   child: Text(
                     "Buy Now",
@@ -37,7 +40,7 @@ class Body extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: FlatButton(
+                child: TextButton(
                   onPressed: () {},
                   child: Text("Description"),
                 ),
